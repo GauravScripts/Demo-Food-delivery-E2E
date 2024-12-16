@@ -11,9 +11,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderDTO {
-    private Integer orderId;
-    private List<FoodItemDTO> foodItemList;
+public class OrderDTOfromFE {
+    private List<FoodItemDTO> foodItemDTOList;
+    private Integer userId;
     private Restaurant restaurant;
-    private UserDTO user;
 }
