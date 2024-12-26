@@ -7,7 +7,6 @@
         <artifactId>food-delivery-webapp-e2e</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.udemy</groupId>
     <artifactId>UserInformation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>UserInformation</name>
@@ -54,8 +53,9 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.6.0</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
