@@ -10,7 +10,7 @@ spring:
   application:
     name: FOOD-CATALOGUE-SERVICE
   datasource:
-    url: jdbc:postgresql://localhost:5432/fooddb?createDatabaseIfNotExist=true&useSSL=false
+    url: jdbc:postgresql://localhost:5432/fooddb
     username: postgres
     password: root
     driver-class-name: org.postgresql.Driver

@@ -10,7 +10,7 @@ spring:
   application:
     name: RESTAURANT-SERVICE
   datasource:
-    url: jdbc:postgresql://localhost:5432/restaurantdb?createDatabaseIfNotExist=true&useSSL=false
+    url: jdbc:postgresql://localhost:5432/restaurantdb
     username: postgres
     password: root
     driver-class-name: org.postgresql.Driver
