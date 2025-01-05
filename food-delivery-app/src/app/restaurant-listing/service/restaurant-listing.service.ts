@@ -1,20 +1,26 @@
-import {Injectable, signal, Signal, WritableSignal} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {API_URL_RL} from '../../constants/url';
+import { Injectable, signal, WritableSignal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Restaurant } from '../../Shared/models/Restaurant';
+import { API_URL_RL } from '../../constants/url';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantListingService {
-  data: WritableSignal<any> = signal(null);
+  data: WritableSignal<Restaurant[]> = signal([]);
   loading: WritableSignal<boolean> = signal(false);
+  private apiURL = `${API_URL_RL}/restaurant/fetchAllRestaurants`;
 
-  private apiURL = API_URL_RL+'/restaurant/fetchAllRestaurants';
+  constructor(private http: HttpClient) { }
 
-  constructor(private http:HttpClient) { }
-  fetchData(){
+  getAllRestaurants(): Observable<Restaurant[]> {
+    return this.http.get<Restaurant[]>(this.apiURL);
+  }
+
+  fetchAllRestaurants() {
     this.loading.set(true);
-    this.http.get(this.apiURL).subscribe(
+    this.getAllRestaurants().subscribe(
       (response) => {
         this.data.set(response);
         this.loading.set(false);
@@ -25,4 +31,5 @@ export class RestaurantListingService {
       }
     );
   }
+
 }
