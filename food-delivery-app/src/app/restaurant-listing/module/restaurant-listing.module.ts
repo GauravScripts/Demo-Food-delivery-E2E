@@ -8,7 +8,6 @@ import { RestaurantListingService } from '../service/restaurant-listing.service'
 
 @NgModule({
   declarations: [
-    RestaurantListingComponent  // Move to declarations
   ],
   imports: [
     CommonModule,

@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {CommonModule, NgForOf} from '@angular/common';
 import { RestaurantListingService } from '../service/restaurant-listing.service';
 import { Restaurant } from '../../Shared/models/Restaurant';
+import {NgForOf, NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-restaurant-listing',
-  standalone: true,  // Add this
-  imports: [
-    CommonModule,
-    NgForOf
-  ],
   templateUrl: './restaurant-listing.component.html',
   styleUrl: './restaurant-listing.component.scss',
-  providers: [RestaurantListingService]  // Add this if using standalone
+  imports: [
+    NgForOf
+  ],
+  providers: [RestaurantListingService]
 })
 export class RestaurantListingComponent implements OnInit {
   constructor(private router: Router, public restaurantService: RestaurantListingService) { }
@@ -31,9 +29,9 @@ export class RestaurantListingComponent implements OnInit {
   }
 
   getRandomImage(): string {
-    const imageCount = 8; // Adjust this number based on the number of images in your asset folder
+    const imageCount = 8;
     const randomIndex = this.getRandomNumber(1, imageCount);
-    return `${randomIndex}.jpg`; // Replace with your image filename pattern
+    return `${randomIndex}.jpg`;
   }
 
   onButtonClick(id: number | undefined) {

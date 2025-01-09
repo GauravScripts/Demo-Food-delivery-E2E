@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/resturant")
-@CrossOrigin(origins = "*")
+@RequestMapping("/restaurant")
+@CrossOrigin(origins = "http://localhost:4200")
 public class RestaurantController {
     @Autowired
     private ResturantService resturantService;
 
 
-    @GetMapping("/fetchAllResturants")
+    @GetMapping("/fetchAllRestaurants")
     public ResponseEntity<List<ResturantDTO>> fetchAllResturants() {
         return ResponseEntity.ok(resturantService.fetchAllResturants());
     }
