@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/foodcatalouge")
+@RequestMapping("/foodCatalogue")
 public class FoodCatalougeController {
     @Autowired
     private FoodCatalougeService foodCatalougeService;
@@ -21,7 +21,7 @@ public class FoodCatalougeController {
     }
 
 
-    @GetMapping("/getFoodItem/{resturantId}")
+    @GetMapping("/fetchRestaurantAndFoodItemsById/{resturantId}")
     public ResponseEntity<FoodCatalougePage> fetchRestaurantDetailsWithFoodMenu(@PathVariable Integer resturantId) {
         FoodCatalougePage foodCatalougePage = foodCatalougeService.fetchRestaurantDetailsWithFoodMenu(resturantId);
         return new ResponseEntity<>(foodCatalougePage, HttpStatus.FOUND);

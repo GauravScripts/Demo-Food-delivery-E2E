@@ -1,17 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { RestaurantListingService } from '../service/restaurant-listing.service';
-import { Restaurant } from '../../Shared/models/Restaurant';
-import {NgForOf, NgOptimizedImage} from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {RestaurantListingService} from '../service/restaurant-listing.service';
+import {Restaurant} from '../../Shared/models/Restaurant';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-restaurant-listing',
   templateUrl: './restaurant-listing.component.html',
-  styleUrl: './restaurant-listing.component.scss',
   imports: [
     NgForOf
   ],
-  providers: [RestaurantListingService]
+  styleUrl: './restaurant-listing.component.scss'
 })
 export class RestaurantListingComponent implements OnInit {
   constructor(private router: Router, public restaurantService: RestaurantListingService) { }
